@@ -43,6 +43,12 @@ function handleToDoSubmit(event){
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
+const isLogged = localStorage.getItem("username");
+
+if(isLogged === null){
+    toDoInput.classList.add("hidden");
+}
+
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null){
